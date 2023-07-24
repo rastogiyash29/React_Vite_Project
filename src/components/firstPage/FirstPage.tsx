@@ -3,8 +3,7 @@ import { TextField, Button, Box, Typography, FormHelperText } from '@mui/materia
 import { useNavigate } from 'react-router-dom';
 
 const FirstPage: React.FC = () => {
-
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -49,7 +48,7 @@ const FirstPage: React.FC = () => {
     localStorage.setItem('formData', JSON.stringify(formData));
 
     navigate('/second-page');
-    };
+  };
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -82,6 +81,21 @@ const FirstPage: React.FC = () => {
     } else {
       setErrors((errors) => ({ ...errors, email: '' }));
     }
+  };
+
+  const handleReset = () => {
+    // Clear the form data from localStorage
+    localStorage.removeItem('formData');
+
+    // Reset the state values
+    setName('');
+    setPhone('');
+    setEmail('');
+    setErrors({
+      name: '',
+      phone: '',
+      email: '',
+    });
   };
 
   return (
@@ -136,6 +150,9 @@ const FirstPage: React.FC = () => {
       <FormHelperText error>{errors.email}</FormHelperText>
       <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
         Submit
+      </Button>
+      <Button onClick={handleReset} variant="contained" color="secondary" sx={{ mt: 2 }}>
+        Reset
       </Button>
     </Box>
   );
