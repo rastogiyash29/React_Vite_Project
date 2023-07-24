@@ -16,7 +16,7 @@ const SecondPage = () => {
     if (!data) {
       setShowAlert(true);
       setTimeout(() => {
-        navigate('/first-page');
+        navigate('/');
       }, 5000);
     }
   }, []);

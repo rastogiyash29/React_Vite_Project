@@ -7,7 +7,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path='/first-page' element={<FirstPage/>}/>
+          <Route path='/' element={<FirstPage/>}/>
           <Route path='/second-page' element={<SecondPage/>}/>
         </Routes>
       </BrowserRouter>
