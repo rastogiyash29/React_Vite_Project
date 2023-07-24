@@ -17,7 +17,7 @@ const FirstPage: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Check if there are any validation errors
+    // Checking are any validation errors
     if (!name) {
       setErrors((errors) => ({ ...errors, name: 'Name is required' }));
       return;
@@ -39,7 +39,7 @@ const FirstPage: React.FC = () => {
       return;
     }
 
-    // If all validations pass, save the form data to localStorage
+    // If all validations pass, saving the form data to localStorage
     const formData = {
       name: name,
       phone: phone,
@@ -84,10 +84,10 @@ const FirstPage: React.FC = () => {
   };
 
   const handleReset = () => {
-    // Clear the form data from localStorage
+    // Clearing the form data from localStorage
     localStorage.removeItem('formData');
 
-    // Reset the state values
+    // Resetting the state values
     setName('');
     setPhone('');
     setEmail('');
